@@ -4,14 +4,12 @@ var Todo = mongoose.model('Todo', {
     title: {
         type: String,
         required: true,
-        trim: true,
-        minlength: 5
+        trim: true
     },
     subject:{
         type: String,
         required: true,
-        trim: true,
-        minlength: 5
+        trim: true
     },
     completed: {
         type: Boolean,
