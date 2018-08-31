@@ -6,7 +6,6 @@ const _ = require('lodash');
 var { ObjectID } = require('mongodb')
 
 router.post('/', authenticate, (req, res) => {
-    console.log(req.body);
     var todo = new Todo({
         title: req.body.title,
         subject: req.body.subject,

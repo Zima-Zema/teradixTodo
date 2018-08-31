@@ -5,8 +5,6 @@ var { authenticate } = require('../middleware/auth')
 const _ = require('lodash');
 
 router.post('/register', (req, res) => {
-    console.log("regs route");
-
     var body = _.pick(req.body, ['email', 'name', 'password']);
     var user = new User(body);
     User.findOne({email:body.email}).then((us)=>{
@@ -17,16 +15,13 @@ router.post('/register', (req, res) => {
             return user.generateAuthToken();
             //res.status(201).send(user);
         }, (err) => {
-            console.log("SaveError", err);
             res.status(404).send(err);
     
         }).then((token) => {
             res.status(201).header('x-auth', token).send(user);
         }, (err) => {
-            console.log("tokenError", err);
             res.status(400).send(err);
         }).catch((e) => {
-            console.log("exception", e);
             res.status(500).send(e);
         })
     })

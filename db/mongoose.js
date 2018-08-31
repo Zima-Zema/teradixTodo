@@ -8,7 +8,7 @@ mongoose.connect('mongodb://teradixAdmin:teradixPassword159@ds022228.mlab.com:22
 });
 
 mongoose.connection.on('error', (err) => {
-    console.log(err);
+    
 })
 module.exports = {
     mongoose: mongoose
