@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://teradixAdmin:teradixPassword159@ds022228.mlab.com:22228/teradixapp', {
-    useCreateIndex: true,
+    // useCreateIndex: true,
     useNewUrlParser: true
 });
 
